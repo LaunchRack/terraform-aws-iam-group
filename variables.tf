@@ -7,6 +7,7 @@ variable "create_group" {
 variable "name" {
   description = "Name of IAM group."
   type        = string
+  default     = ""
 }
 
 variable "group_users" {
@@ -43,4 +44,10 @@ variable "aws_account_id" {
   description = "AWS account id to use inside IAM policies. If empty, current AWS account ID will be used."
   type        = string
   default     = ""
+}
+
+variable "tags" {
+  description = "A map of tags for the resources."
+  type        = map(string)
+  default     = {}
 }

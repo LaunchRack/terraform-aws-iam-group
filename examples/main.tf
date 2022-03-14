@@ -18,4 +18,5 @@ module "aws_iam_group" {
   name                     = var.name
   group_users              = var.group_users
   custom_group_policy_arns = var.custom_group_policy_arns
+  tags                     = var.tags
 }

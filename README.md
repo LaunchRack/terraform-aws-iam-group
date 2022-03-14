@@ -39,6 +39,11 @@ module "aws_iam_group" {
   custom_group_policy_arns = [
     "arn:aws:iam::aws:policy/AmazonCognitoReadOnly",
   ]
+
+  tags        = {
+    BusinessUnit = "tools"
+    Application  = "cicd"
+  }
 }
 ```
 
@@ -51,24 +56,52 @@ module "aws_iam_group" {
 
 > **Note:** The `terraform.tfvars` file will need to be created in the root directory with value overrides
 
+## Requirements
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | ~> 1.0 |
+| <a name="requirement_aws"></a> [aws](#requirement_aws) | ~> 4.0 |
+| <a name="requirement_local"></a> [local](#requirement_local) | ~> 2.0 |
+| <a name="requirement_null"></a> [null](#requirement_null) | ~> 3.0 |
+
+## Providers
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider_aws) | ~> 4.0 |
+
+## Resources
+| Name | Type |
+|------|------|
+| [aws_iam_group.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group) | resource |
+| [aws_iam_group_membership.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group_membership) | resource |
+| [aws_iam_group_policy_attachment.custom](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group_policy_attachment) | resource |
+| [aws_iam_group_policy_attachment.custom_arns](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group_policy_attachment) | resource |
+| [aws_iam_group_policy_attachment.iam_self_management](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group_policy_attachment) | resource |
+| [aws_iam_policy.custom](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
+| [aws_iam_policy.iam_self_management](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
+| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
+| [aws_iam_policy_document.iam_self_management](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+
 ## Inputs
 | Name | Description | Type | Default | Required |
-| ----------- | ----------- | ----------- | ----------- | ----------- |
-| attach_iam_self_management_policy | Whether to attach IAM policy which allows IAM users to manage their credentials and MFA. | `bool` | `"true"` | no |
-| aws_account_id | AWS account id to use inside IAM policies. If empty, current AWS account ID will be used. | `string` | `""` | no |
-| create_group | Whether to create IAM group. | `bool` | `"true"` | no |
-| custom_group_policies | List of maps of inline IAM policies to attach to IAM group. Should have `name` and `policy` keys in each element. | `list(map(string))` | `[]` | no |
-| custom_group_policy_arns | List of IAM policies ARNs to attach to IAM group. | `list(string)` | `[]` | no |
-| group_users | List of IAM users to have in an IAM group which can assume the role. | `list(string)` | `[]` | no |
-| iam_self_management_policy_name_prefix | Name prefix for IAM policy to create with IAM self-management permissions. | `string` | `"IAMSelfManagement-"` | no |
-| name | Name of IAM group | `string` | `""` | yes |
+|------|-------------|------|---------|:--------:|
+| <a name="input_attach_iam_self_management_policy"></a> [attach_iam_self_management_policy](#input_attach_iam_self_management_policy) | Whether to attach IAM policy which allows IAM users to manage their credentials and MFA. | `bool` | `true` | no |
+| <a name="input_aws_account_id"></a> [aws_account_id](#input_aws_account_id) | AWS account id to use inside IAM policies. If empty, current AWS account ID will be used. | `string` | `""` | no |
+| <a name="input_create_group"></a> [create_group](#input_create_group) | Whether to create IAM group. | `bool` | `true` | no |
+| <a name="input_custom_group_policies"></a> [custom_group_policies](#input_custom_group_policies) | List of maps of inline IAM policies to attach to IAM group. Should have `name` and `policy` keys in each element. | `list(map(string))` | `[]` | no |
+| <a name="input_custom_group_policy_arns"></a> [custom_group_policy_arns](#input_custom_group_policy_arns) | List of IAM policies ARNs to attach to IAM group. | `list(string)` | `[]` | no |
+| <a name="input_group_users"></a> [group_users](#input_group_users) | List of IAM users to have in an IAM group which can assume the role. | `list(string)` | `[]` | no |
+| <a name="input_iam_self_management_policy_name_prefix"></a> [iam_self_management_policy_name_prefix](#input_iam_self_management_policy_name_prefix) | Name prefix for IAM policy to create with IAM self-management permissions. | `string` | `"IAMSelfManagement-"` | no |
+| <a name="input_name"></a> [name](#input_name) | Name of IAM group. | `string` | `""` | yes |
+| <a name="input_tags"></a> [tags](#input\_tags) | A map of tags for the resources. | `map(string)` | `{}` | no |
+
 
 ## Outputs
 | Name | Description |
-| ----------- | ----------- |
-| aws_account_id | IAM AWS account id. |
-| this_group_name | IAM group name. |
-| this_group_users | List of IAM users in IAM group. |
+|------|-------------|
+| <a name="output_aws_account_id"></a> [aws_account_id](#output_aws_account_id) | IAM AWS account id. |
+| <a name="output_this_group_name"></a> [this_group_name](#output_this_group_name) | IAM group name. |
+| <a name="output_this_group_users"></a> [this_group_users](#output_this_group_users) | List of IAM users in IAM group. |
 
 ## Authors
 This module is maintained by our awsome platform engineering team. Here are our [contributors](https://github.com/LaunchRack/terraform-aws-iam-group/graphs/contributors)

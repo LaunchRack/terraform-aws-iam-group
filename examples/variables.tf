@@ -17,3 +17,8 @@ variable "custom_group_policy_arns" {
   description = "List of IAM policies ARNs to attach to IAM group."
   type        = list(string)
 }
+
+variable "tags" {
+  description = "A map of tags for the resources."
+  type        = map(string)
+}
