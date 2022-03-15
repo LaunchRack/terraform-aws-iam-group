@@ -3,9 +3,46 @@
   <img src="https://launchrack.com/assets/img/logo_launchrack.png" alt="LaunchRack logo" style="width: 600px;" class="d-md-inline-block">
   </a>
 </p>
-<br>
-<br>
-<p><h4 align="center">Need help with Cloud-Native DevOps? <a href="https://launchrack.com/contact/" target="_blank" rel="contactus"> GET IN TOUCH</a></h4></p>
+
+<p>
+We are huge followers of the <b>Cloud-Native DevOps</b> movement and are firm believers in the power of treating <b>Infrastructure as Code</b> using immutable architecture & <b>GitOps</b> style deployments. We adhere to a strict automation mindset (automation first, as opposed to manual first with automation later) and strive to provide the best technical acumen that will enable organizations improve <b>Cloud Security</b> Posture, <b>Release</b> More Often, <b>Scale</b> with Demand, Brace <b>Agility</b>, Operate within <b>Budget</b> and focus on value derived by the time saved on the execution of a task rather than having to spend cycles on design & tool selection.
+</p>
+
+<p>
+  <h4 style="text-align: left"> 
+    Our consistent and automated processes can help you improve:
+  </h4>
+</p>
+
+<p style="text-align: left;">
+✔ Better <b>utilization</b> of cloud resources by 40% <br>
+✔ Self-service infrastructure <b>provisioning</b> by 35% <br>
+✔ <b>Security</b> and governance by 30% <br>
+✔ Return on value/investment by 20% <br>
+✔ Team management & <b>governance</b> by 15% <br>
+✔ Earlier <b>detection</b> of bugs by 32% <br>
+✔ Response to issues/events by 23% <br>
+</p>
+
+<p>
+  <h4 align="center">
+    Chat more?
+    <a href="mailto:info@launchrack.com">Email</a>
+    <span style="color:white"> | </span> 
+    <a href="https://launchrack.com/contact/" target="_blank">Contact us</a>
+  </h4>
+</p>
+<p align="center">
+     <a href="https://www.linkedin.com/company/launchrack"> 
+     <img alt="linkedin logo" src="https://user-images.githubusercontent.com/100512415/158441415-f399bf91-f65a-4568-8882-2785715c86b0.png" style="height: 20px;width: 20px;"/>
+     </a>
+     <a href="https://www.twitter.com/launchrack">
+     <img alt="twitter logo" src="https://user-images.githubusercontent.com/100512415/158441443-3851792d-2a40-47f6-a45a-7f576134797b.png" style="height: 20px;width: 20px;"/>
+     </a>
+     <a href="https://www.facebook.com/launchrack">
+     <img alt="facebook logo" src="https://user-images.githubusercontent.com/100512415/158447347-2068d8c1-80fa-4f15-a9a0-7aeff94a7fd9.png" style="height: 20px;width: 20px;"/>
+     </a>
+</p>
 
 ---
 
